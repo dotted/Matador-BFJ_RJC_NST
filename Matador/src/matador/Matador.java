@@ -6,6 +6,8 @@
 
 package matador;
 
+import java.util.HashMap;
+
 /**
  *
  * @author Nicolai
@@ -17,6 +19,12 @@ public class Matador {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Player test = new Player();
+        HashMap<Integer, Integer> housePrice = new HashMap<Integer, Integer>();
+        housePrice.put(1, 2000);
+        housePrice.put(2, 3000);
+        UpgradeableDeed test1 = new UpgradeableDeed(1000, 2000,test, housePrice);
+        System.out.println(test1.getHousePrice());
     }
     
 }

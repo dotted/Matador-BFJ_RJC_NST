@@ -10,6 +10,6 @@ package matador;
  *
  * @author Nicolai
  */
-public interface IDeed {    
-    public int getDeed();    
+class Player {
+    
 }
