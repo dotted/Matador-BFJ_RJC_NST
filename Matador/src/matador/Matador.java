@@ -17,6 +17,11 @@ public class Matador {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Zone zone = new Zone();
+        Start startField = new Start("start", zone, 4000);
+        Parking parkingField = new Parking("parking", zone, 4000);
+        System.out.println(startField.getReward());
+        System.out.println(parkingField.getReward());
     }
     
 }

@@ -8,8 +8,8 @@ package matador;
 
 /**
  *
- * @author Nicolai
+ * @author Rene
  */
-public interface IReward {
-    public int getReward();
+class Zone {
+    
 }
