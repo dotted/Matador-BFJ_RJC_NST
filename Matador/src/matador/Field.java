@@ -11,5 +11,17 @@ package matador;
  * @author Nicolai
  */
 public class Field {
+    private Zone zone;
+    private String name;
     
+    public Field (String name, Zone zone)
+    {
+        this.name = name;
+        this.zone = zone;
+    }
+    
+    public String getName()
+    {
+        return this.name;
+    }
 }

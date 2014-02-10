@@ -10,6 +10,19 @@ package matador;
  *
  * @author Nicolai
  */
-public class Parking {
+public class Parking extends Field implements IReward {
+    
+    private int reward;
+    
+    public Parking (String name, Zone zone, int reward)
+    {
+        super(name, zone);
+        this.reward = reward;        
+    }
+    
+    public int getReward()
+    {
+        return this.reward;
+    }
     
 }
