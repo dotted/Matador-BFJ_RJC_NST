@@ -11,5 +11,6 @@ package matador;
  * @author Nicolai
  */
 public interface ILease {
+    public int getLease();
     
 }

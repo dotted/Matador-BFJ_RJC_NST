@@ -10,6 +10,23 @@ package matador;
  *
  * @author Nicolai
  */
-public class Brewery {
+public class Brewery extends Field implements ILease {
     
+    private Deed deed;
+    
+    public Brewery(String name, Zone zone, Deed deed)
+    {
+        super(name,zone);
+        this.deed = deed;                
+    }
+    
+    public int getLease()
+    {        
+        return 1;
+    }
+    
+    public Deed getDeed()
+    {
+        return this.deed;
+    }
 }
