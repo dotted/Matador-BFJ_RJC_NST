@@ -54,7 +54,7 @@ public class BankAccount {
             else
                 throw new UnsupportedOperationException();
         else
-            this.balance += Math.abs(transaction.getAmount()); //This will turn a negative amount to a plus amount
+            this.balance += transaction.getAmount();
     }
     
 }
