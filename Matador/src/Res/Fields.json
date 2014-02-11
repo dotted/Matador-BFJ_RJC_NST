@@ -1,0 +1,194 @@
+[
+    {
+       "name": "Rødovrevej",
+       "deedPrice": 1200,
+       "rent": [50, 250, 750, 2250, 4000, 6000],
+       "housePrice": 1000,
+       "zone": "blue"
+    },
+    {
+       "name": "Hvidovrevej",
+       "deedPrice": 1200,
+       "rent": [50, 250, 750, 2250, 4000, 6000],
+       "housePrice": 1000,
+       "zone": "blue"
+    },
+    {
+       "name": "SFL-Færgerne",
+       "deedPrice": 4000,
+       "rent": [0, 500, 1000, 2000, 4000],
+       "housePrice": 2000,
+       "zone": "shipping"
+    },
+    {
+       "name": "Roskildevej",
+       "deedPrice": 2000,
+       "rent": [100, 600, 1800, 5400, 8000, 11000],
+       "housePrice": 1000,
+       "zone": "orange"
+    },
+    {
+       "name": "Valby Langgade",
+       "deedPrice": 2000,
+       "rent": [100, 600, 1800, 5400, 8000, 11000],
+       "housePrice": 1000,
+       "zone": "orange"
+    },
+    {
+       "name": "Allégade",
+       "deedPrice": 2400,
+       "rent": [150, 800, 2000, 6000, 9000, 12000],
+       "housePrice": 1000,
+       "zone": "orange"
+    },
+    {
+       "name": "Frederksberg Allé",
+       "deedPrice": 2800,
+       "rent": [200, 1000, 3000, 9000, 12500, 15000],
+       "housePrice": 2000,
+       "zone": "green"
+    },
+    {
+       "name": "Tuborg",
+       "deedPrice": 3000,
+       "zone": "Brewery"
+    },
+    {
+       "name": "Bülowsvej",
+       "deedPrice": 2800,
+       "rent": [200, 1000, 3000, 9000, 12500, 15000],
+       "housePrice": 2000,
+       "zone": "green"
+    },
+    {
+       "name": "Gl. Kongevej",
+       "deedPrice": 3200,
+       "rent": [250, 1250, 3750, 10000, 14000, 18000],
+       "housePrice": 2000,
+       "zone": "green"
+    },
+    {
+       "name": "DSB Kalunborg/Århus",
+       "deedPrice": 4000,
+       "rent": [0, 500, 1000, 2000, 4000],
+       "housePrice": 2000,
+       "zone": "shipping"
+    },
+    {
+       "name": "Bernstorffdvej",
+       "deedPrice": 3600,
+       "rent": [300, 1400, 4000, 11000, 15000, 19000],
+       "housePrice": 2000,
+       "zone": "grey"
+    },
+    {
+       "name": "Hellerupvej",
+       "deedPrice": 3600,
+       "rent": [300, 1400, 4000, 11000, 15000, 19000],
+       "housePrice": 2000,
+       "zone": "grey"
+    },
+    {
+       "name": "Strandvej",
+       "deedPrice": 4000,
+       "rent": [350, 1600, 4400, 12000, 16000, 20000],
+       "housePrice": 2000,
+       "zone": "grey"
+    },
+    {
+       "name": "Triangeln",
+       "deedPrice": 4400,
+       "rent": [350, 1800, 5000, 14000, 17500, 21000],
+       "housePrice": 3000,
+       "zone": "red"
+    },  
+    {
+       "name": "Østerbrogade",
+       "deedPrice": 4400,
+       "rent": [350, 1800, 5000, 14000, 17500, 21000],
+       "housePrice": 3000,
+       "zone": "red"
+    },  
+    {
+       "name": "Grønningen",
+       "deedPrice": 4800,
+       "rent": [400, 2000, 6000, 15000, 18500, 22000],
+       "housePrice": 3000,
+       "zone": "red"
+    },
+    {
+       "name": "DFDS Seaways",
+       "deedPrice": 4000,
+       "rent": [0, 500, 1000, 2000, 4000],
+       "housePrice": 2000,
+       "zone": "shipping"
+    },
+    {
+        "name": "Bredgade",
+        "deedPrice": 5200,
+        "rent": [450, 2200, 6600, 16000, 19500, 23000],
+        "housePrice": 3000,
+        "zone": "white"
+    },
+    {
+        "name": "Kgs. Nytorv",
+        "deedPrice": 5200,
+        "rent": [450, 2200, 6600, 16000, 19500, 23000],
+        "housePrice": 3000,
+        "zone": "white"
+    },
+        {
+       "name": "CocaCola",
+       "deedPrice": 3000,
+       "zone": "Brewery"
+    },
+    {
+        "name": "Østergade",
+        "deedPrice": 5600,
+        "rent": [500, 2400, 7200, 17000, 20500, 24000],
+        "housePrice": 3000,
+        "zone": "white"
+    },     
+    {
+        "name": "Amagertorv",
+        "deedPrice": 6000,
+        "rent": [550, 2600, 7800, 18000, 22000, 25000],
+        "housePrice": 4000,
+        "zone": "yellow"
+    },      
+    {
+        "name": "Vimmelskaftet",
+        "deedPrice": 6000,
+        "rent": [550, 2600, 7800, 18000, 22000, 25000],
+        "housePrice": 4000,
+        "zone": "yellow"
+    },      
+    {
+        "name": "Nygade",
+        "deedPrice": 6400,
+        "rent": [600, 3000, 9000, 20000, 24000, 28000],
+        "housePrice": 4000,
+        "zone": "yellow"
+    },
+    {
+       "name": "DSB Halsskov/Knudshoved",
+       "deedPrice": 4000,
+       "rent": [0, 500, 1000, 2000, 4000],
+       "housePrice": 2000,
+       "zone": "shipping"
+    },
+    {
+        "name": "Frederiksberggade",
+        "deedPrice": 7000,
+        "rent": [700, 3500, 10000, 22000, 26000, 30000],
+        "housePrice": 4000,
+        "zone": "purple"
+    },
+    {
+        "name": "rådhuspladsen",
+        "deedPrice": 8000,
+        "rent": [1000, 4000, 12000, 28000, 34000, 40000],
+        "housePrice": 4000,
+        "zone": "purple"
+    }
+]
