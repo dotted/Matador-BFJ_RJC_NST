@@ -11,5 +11,15 @@ package matador;
  * @author Rene
  */
 class Zone {
+    public String name;
     
+    public Zone (String name)
+    {
+        this.name = name;
+    }
+    
+    public String getName()
+    {
+        return this.name;
+    }
 }
