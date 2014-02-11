@@ -11,7 +11,7 @@ package matador;
  * @author Rene
  */
 class Zone {
-    public String name;
+    private String name;
     
     public Zone (String name)
     {
