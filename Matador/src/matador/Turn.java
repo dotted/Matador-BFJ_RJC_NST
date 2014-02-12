@@ -8,7 +8,7 @@ public class Turn {
     private final DiceCup diceCup;
     private final GameBoard gameBoard;
 
-    public Turn(Player player, DiceCup diceCup, Game<Board gameBoard) {
+    public Turn(Player player, DiceCup diceCup, GameBoard gameBoard) {
         this.player = player;
         this.diceCup = diceCup;
         this.gameBoard = gameBoard;
