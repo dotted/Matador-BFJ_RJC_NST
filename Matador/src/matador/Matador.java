@@ -23,6 +23,5 @@ public class Matador {
        Game game = new Game();
        game.start();
 
-    }
-    
+    }   
 }
