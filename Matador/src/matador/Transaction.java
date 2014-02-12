@@ -20,7 +20,7 @@ public class Transaction extends java.util.Observable {
      * This will create an transaction
      * @param sender
      * @param recipient
-     * @param Amount
+     * @param amount
      */
     
     public Transaction(BankAccount sender, BankAccount recipient, int amount)
