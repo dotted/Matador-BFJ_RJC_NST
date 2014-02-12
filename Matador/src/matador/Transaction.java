@@ -23,11 +23,13 @@ public class Transaction {
      * @param Amount 
      */
     
-    public Transaction(BankAccount sender, BankAccount recipient, int Amount)
+    public Transaction(BankAccount sender, BankAccount recipient, int amount)
     {
+        if (amount < 0)
+            throw new UnsupportedOperationException();
         this.sender = sender;
         this.recipient = recipient;
-        this.Amount = Amount;
+        this.Amount = amount;
     }
     
     /**
