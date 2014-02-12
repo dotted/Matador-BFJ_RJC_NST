@@ -20,18 +20,8 @@ public class Matador {
     public static void main(String[] args) {
         // TODO code application logic here
 
-        Player test = new Player("Fudge Off");
-        HashMap<Integer, Integer> housePrice = new HashMap<Integer, Integer>();
-        housePrice.put(1, 2000);
-        housePrice.put(2, 3000);
-        UpgradeableDeed test1 = new UpgradeableDeed(1000, 2000,test, housePrice);
-        System.out.println(test1.getHousePrice());
-
-        Zone zone = new Zone("Fudge Off");
-        Start startField = new Start("start", zone, 4000);
-        Parking parkingField = new Parking("parking", zone, 4000);
-        System.out.println(startField.getReward());
-        System.out.println(parkingField.getReward());
+       Game game = new Game();
+       game.start();
 
     }
     
