@@ -10,7 +10,7 @@ package matador;
  *
  * @author Nicolai
  */
-class Player {
+class Player extends java.util.Observable {
         private String name;
     
     public Player (String name)

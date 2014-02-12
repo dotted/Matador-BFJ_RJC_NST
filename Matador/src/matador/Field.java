@@ -10,7 +10,7 @@ package matador;
  *
  * @author Nicolai
  */
-public class Field {
+public class Field extends java.util.Observable {
     private Zone zone;
     private String name;
     

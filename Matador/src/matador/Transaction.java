@@ -10,7 +10,7 @@ package matador;
  *
  * @author Nicolai
  */
-public class Transaction {
+public class Transaction extends java.util.Observable {
     
     private BankAccount sender;
     private BankAccount recipient;
@@ -20,7 +20,7 @@ public class Transaction {
      * This will create an transaction
      * @param sender
      * @param recipient
-     * @param Amount 
+     * @param Amount
      */
     
     public Transaction(BankAccount sender, BankAccount recipient, int amount)

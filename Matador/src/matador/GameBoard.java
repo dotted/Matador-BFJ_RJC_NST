@@ -13,7 +13,7 @@ import java.util.HashMap;
  *
  * @author Nicolai
  */
-public class GameBoard {
+public class GameBoard extends java.util.Observable {
     
     private HashMap<Zone, Field[]> fieldsZone;
     private HashMap<Player, Field> playersPosition;

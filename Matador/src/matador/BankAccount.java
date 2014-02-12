@@ -10,7 +10,7 @@ package matador;
  *
  * @author Nicolai
  */
-public class BankAccount {
+public class BankAccount extends java.util.Observable {
     
     private int balance;
     private Player owner;

@@ -10,7 +10,7 @@ package matador;
  *
  * @author Nicolai
  */
-public class Deed {
+public class Deed extends java.util.Observable {
     
     private int purchasePrice;
     private int pawnPrice;

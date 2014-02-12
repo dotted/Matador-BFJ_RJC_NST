@@ -3,7 +3,7 @@ package matador;
 /**
  * Created by BFJ on 11-02-14.
  */
-public class Dice implements IDice {
+public class Dice extends java.util.Observable implements IDice {
     private double eyes;
 
     /**

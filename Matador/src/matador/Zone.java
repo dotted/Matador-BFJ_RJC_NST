@@ -10,14 +10,14 @@ package matador;
  *
  * @author Rene
  */
-class Zone {
+class Zone extends java.util.Observable {
     private String name;
     
     public Zone (String name)
     {
         this.name = name;
     }
-    
+
     public String getName()
     {
         return this.name;
