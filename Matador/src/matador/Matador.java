@@ -33,6 +33,5 @@ public class Matador {
         System.out.println(startField.getReward());
         System.out.println(parkingField.getReward());
 
-    }
-    
+    }   
 }
