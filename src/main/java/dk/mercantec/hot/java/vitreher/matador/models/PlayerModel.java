@@ -9,26 +9,38 @@ package dk.mercantec.hot.java.vitreher.matador.models;
 import dk.mercantec.hot.java.vitreher.matador.dataStructures.BankAccount;
 import dk.mercantec.hot.java.vitreher.matador.dataStructures.Player;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Observable;
 
 
 /**
  *
  * @author Nicolai
  */
-public class PlayerModel {
-    
-    private ArrayList<Player> players;
-    private ArrayList<BankAccount> bankAccounts;
-    
+public class PlayerModel extends Observable {
+
+    private final ArrayList<Player> players;
+    private final ArrayList<BankAccount> bankAccounts;
+
+    public PlayerModel() {
+        this.players = new ArrayList<Player>();
+        this.bankAccounts = new ArrayList<BankAccount>();
+    }
+
     /**
      * This will create a Player and a BankAccount
      * @param playerName String
      * @param bankBalance int
-     */    
+     */
     public void create(String playerName, int bankBalance)
     {
-        this.players.add(new Player(playerName));
-        this.bankAccounts.add(new BankAccount(bankBalance));
+        Player player = new Player(playerName);
+        BankAccount bankAccount = new BankAccount(bankBalance);
+        this.players.add(player);
+        this.bankAccounts.add(bankAccount);
+
+        setChanged();
+        notifyObservers(this.bankAccounts);
     }
     
     /**
@@ -41,11 +53,14 @@ public class PlayerModel {
     {
         BankAccount from = this.bankAccounts.get(fromPlayer);
         BankAccount to = this.bankAccounts.get(toPlayer);
-        from.withdraw(amount);
-        to.deposit(amount);
+        try {
+            from.withdraw(amount);
+            to.deposit(amount);
+            setChanged();
+        } catch (UnsupportedOperationException e) {
+            clearChanged();
+        }
+        notifyObservers(this.bankAccounts);
     }
-    
-    
-
 }
 
