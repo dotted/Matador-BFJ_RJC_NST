@@ -2,6 +2,11 @@
   "fields":
   [
       {
+         "name": "Start",
+         "reward": 4000,
+         "zone": "start"
+      },
+      {
          "name": "Rødovrevej",
          "deedPrice": 1200,
          "rent": [50, 250, 750, 2250, 4000, 6000],
