@@ -32,7 +32,7 @@ public class FieldModel extends Observable {
     public FieldModel(JSONObject fields, int amountPlayers, String startField) {
         this.fields = new ArrayList<Field>();
         initialize(fields);
-        this.playerLocations = new Field[amountPlayers];
+        this.playerLocations = new Field[amountPlayers+1]; // Bank is player 0
         int indexOfField = getFieldIndex(startField);
         for (int i = 0; i < this.playerLocations.length; i++)
         {
