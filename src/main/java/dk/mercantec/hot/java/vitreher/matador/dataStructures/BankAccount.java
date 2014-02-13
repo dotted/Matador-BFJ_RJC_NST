@@ -28,6 +28,9 @@ public class BankAccount {
     }
     
     public void withdraw(int amount) {
+        if (amount > this.balance)
+            throw new UnsupportedOperationException(String.format("Tried to withdraw %d from bank account, but only had %d", amount, this.balance));
+
         this.balance -= amount;
     }
   
