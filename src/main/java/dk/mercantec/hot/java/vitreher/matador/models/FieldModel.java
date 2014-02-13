@@ -18,14 +18,15 @@ public class FieldModel extends Observable {
      */
     public FieldModel(JSONObject fields) {
         this.fields = new ArrayList<Field>();
-        initialize(fields);
+        //initialize(fields);
     }
 
     /**
      * Import json and parse it to fields
      * @param fields raw jason input
      */
-    private void initialize(JSONObject fields)
+    
+    /*private void initialize(JSONObject fields)
     {
         JSONArray array = fields.getJSONArray("fields");
 
@@ -61,5 +62,5 @@ public class FieldModel extends Observable {
                 this.fields.add(new Street(name, zone, new UpgradeableDeed(deedPrice, deedPrice/2, rentArray)));
 
         }
-    }
+    }*/
 }
