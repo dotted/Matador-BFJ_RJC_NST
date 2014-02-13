@@ -4,7 +4,8 @@ package dk.mercantec.hot.java.vitreher.matador.dataStructures;
  *
  * @author Nicolai
  */
-class Player {
+public class Player {
+    
     private String name;
 
     public Player (String name)
