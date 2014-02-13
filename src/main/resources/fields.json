@@ -58,7 +58,7 @@
       {
          "name": "Tuborg",
          "deedPrice": 3000,
-         "zone": "Brewery"
+         "zone": "brewery"
       },
       {
          "name": "Bülowsvej",
@@ -147,7 +147,7 @@
           {
          "name": "CocaCola",
          "deedPrice": 3000,
-         "zone": "Brewery"
+         "zone": "brewery"
       },
       {
           "name": "Østergade",
