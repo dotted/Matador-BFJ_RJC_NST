@@ -10,9 +10,9 @@ public class UpgradeableDeed extends Deed {
 
     private HashMap housePrice;
 
-    public UpgradeableDeed(int purchasePrice, int pawnPrice, Player owner, HashMap housePrice)
+    public UpgradeableDeed(int purchasePrice, int pawnPrice, int[] housePrice)
     {
-        super(purchasePrice, pawnPrice, owner);
+        super(purchasePrice, pawnPrice);
         this.housePrice = housePrice;
     }
 
