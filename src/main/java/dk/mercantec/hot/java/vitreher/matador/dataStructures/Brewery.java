@@ -4,7 +4,7 @@ package dk.mercantec.hot.java.vitreher.matador.dataStructures;
  *
  * @author Nicolai
  */
-public class Brewery extends Field implements ILease {
+public class Brewery extends Field implements ILease,IDeed {
 
     private Deed deed;
 

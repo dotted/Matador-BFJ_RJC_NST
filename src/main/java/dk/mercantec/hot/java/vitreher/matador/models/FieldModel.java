@@ -4,6 +4,7 @@ import dk.mercantec.hot.java.vitreher.matador.dataStructures.Brewery;
 import dk.mercantec.hot.java.vitreher.matador.dataStructures.Deed;
 import dk.mercantec.hot.java.vitreher.matador.dataStructures.Field;
 import dk.mercantec.hot.java.vitreher.matador.dataStructures.IDeed;
+import dk.mercantec.hot.java.vitreher.matador.dataStructures.IDice;
 import dk.mercantec.hot.java.vitreher.matador.dataStructures.Shipping;
 import dk.mercantec.hot.java.vitreher.matador.dataStructures.Start;
 import dk.mercantec.hot.java.vitreher.matador.dataStructures.Street;
@@ -19,19 +20,30 @@ import org.json.JSONObject;
 public class FieldModel extends Observable {
 
     private final ArrayList<Field> fields;
+    private Field[] playerLocations;
     /**
-     *
+     * This will create an FieldModel which contains
+     * information about all the Fields, the players location,
+     * and set the start field.
+     * @param fields
+     * @param amountPlayers
+     * @param startField
      */
-    public FieldModel(JSONObject fields) {
+    public FieldModel(JSONObject fields, int amountPlayers, String startField) {
         this.fields = new ArrayList<Field>();
         initialize(fields);
+        this.playerLocations = new Field[amountPlayers];
+        int indexOfField = getFieldIndex(startField);
+        for (int i = 0; i < this.playerLocations.length; i++)
+        {
+            playerLocations[i] = this.fields.get(indexOfField);
+        }
     }
 
     /**
      * Import json and parse it to fields
      * @param fields raw jason input
      */
-
     private void initialize(JSONObject fields)
     {
         JSONArray array = fields.getJSONArray("fields");
@@ -70,6 +82,12 @@ public class FieldModel extends Observable {
         }
     }
 
+    /**
+     * This will find the index of a Field in the fields
+     * arrayList and then return the index
+     * @param fieldName string
+     * @return int
+     */
     private int getFieldIndex(String fieldName)
     {
         int indexOfField = -1;
@@ -81,6 +99,12 @@ public class FieldModel extends Observable {
         return indexOfField;
     }
 
+    /**
+     * This will find the Field object with the
+     * name given and give the deed an owner.
+     * @param fieldName String
+     * @param player int
+     */
     public void setOwner(String fieldName, int player)
     {
         int indexOfField = getFieldIndex(fieldName);
@@ -90,6 +114,12 @@ public class FieldModel extends Observable {
         deed.setOwner(player);
     }
 
+    /**
+     * This will add a specified amount of houses
+     * to an UpgradeableDeed
+     * @param fieldName String
+     * @param amount int
+     */
     public void addHouse(String fieldName, int amount)
     {
         int indexOfField = getFieldIndex(fieldName);
@@ -97,10 +127,31 @@ public class FieldModel extends Observable {
         street.addHouse(amount);
     }
 
+    /**
+     * This method will add 1 house on
+     * an UpgradeableDeed
+     * @param fieldName String
+     */
     public void addHouse(String fieldName)
     {
         int indexOfField = getFieldIndex(fieldName);
         Street street = (Street)this.fields.get(indexOfField);
         street.addHouse();
+    }
+
+    /**
+     * This will update the location of the player in the ayrray
+     * according to the dice eyes.
+     * @param player int
+     * @param moves IDice
+     */
+    public void movePlayerPiece(int player, IDice moves)
+    {
+        int currentIndex = this.fields.indexOf(playerLocations[player]);
+        int newIndex = currentIndex + moves.getEyes();
+        if (newIndex <= this.fields.size())
+            playerLocations[player] = this.fields.get(newIndex);
+        else
+            playerLocations[player] = this.fields.get(newIndex % this.fields.size());
     }
 }

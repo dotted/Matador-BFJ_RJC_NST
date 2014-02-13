@@ -4,7 +4,7 @@ package dk.mercantec.hot.java.vitreher.matador.dataStructures;
  *
  * @author Nicolai
  */
-public class Shipping extends Field implements ILease {
+public class Shipping extends Field implements ILease,IDeed {
 
     private static int[] leasePrices;
     private Deed deed;
