@@ -6,21 +6,22 @@ package dk.mercantec.hot.java.vitreher.matador.dataStructures;
  */
 public class Street extends Field implements ILease {
 
-    private int[] leasePrices; // Index 2 in this array is equal to having 2 Houses etc.
-    private int numberOfHouses = 0;
+    private final int[] leasePrices; // Index 2 in this array is equal to having 2 Houses etc.
     private final int maxHouses = 5; // Value of field can't be changed
-    private UpgradeableDeed deed;
+    private final UpgradeableDeed deed;
 
-    public Street(String name, String zone, UpgradeableDeed deed, int[] leasePrices)
+    private int numberOfHouses = 0;
+
+    public Street(String name, String zone, UpgradeableDeed deed, int[] rent)
     {
         super(name, zone);
         this.deed = deed;
-        this.leasePrices = leasePrices;
+        this.leasePrices = rent;
     }
 
     public void addHouse()
     {
-        if (this.numberOfHouses > 5)
+        if (this.numberOfHouses > this.maxHouses)
             throw new UnsupportedOperationException();
         this.numberOfHouses += 1;
     }

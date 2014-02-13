@@ -8,16 +8,14 @@ public class Deed {
 
     private int purchasePrice;
     private int pawnPrice;
-    private Player owner;
 
-    public Deed(int purchasePrice, int pawnPrice, Player owner)
+    public Deed(int purchasePrice, int pawnPrice)
     {
         this.purchasePrice = purchasePrice;
         this.pawnPrice = pawnPrice;
-        this.owner = owner;
     }
 
-    public int getPurchasePrive()
+    public int getPurchasePrice()
     {
         return this.purchasePrice;
     }
@@ -25,10 +23,5 @@ public class Deed {
     public int getPawnPrice()
     {
         return this.pawnPrice;
-    }
-
-    public Player getOwner()
-    {
-        return this.owner;
     }
 }
