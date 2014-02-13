@@ -6,5 +6,5 @@ package dk.mercantec.hot.java.vitreher.matador.dataStructures;
  */
 public interface IDeed {
     public String getName();
-    public int getDeed();
+    public Deed getDeed();
 }

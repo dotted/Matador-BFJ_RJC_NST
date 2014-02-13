@@ -8,9 +8,9 @@ import java.util.HashMap;
  */
 public class UpgradeableDeed extends Deed {
 
-    private HashMap housePrice;
+    private int housePrice;
 
-    public UpgradeableDeed(int purchasePrice, int pawnPrice, HashMap housePrice)
+    public UpgradeableDeed(int purchasePrice, int pawnPrice, int housePrice)
     {
         super(purchasePrice, pawnPrice);
         this.housePrice = housePrice;

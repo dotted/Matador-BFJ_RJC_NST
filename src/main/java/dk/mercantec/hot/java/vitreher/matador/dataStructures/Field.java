@@ -18,4 +18,9 @@ public class Field {
     {
         return this.name;
     }
+    
+   public String getZone()
+   {
+       return this.zone;
+   }
 }

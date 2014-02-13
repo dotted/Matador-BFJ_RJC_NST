@@ -19,6 +19,13 @@ public class Street extends Field implements ILease {
         this.leasePrices = rent;
     }
 
+    public void addHouse(int amount)
+    {
+        if (this.numberOfHouses > this.maxHouses)
+            throw new UnsupportedOperationException();
+        this.numberOfHouses += 1;
+    }
+
     public void addHouse()
     {
         if (this.numberOfHouses > this.maxHouses)

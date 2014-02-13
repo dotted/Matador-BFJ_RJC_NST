@@ -6,22 +6,33 @@ package dk.mercantec.hot.java.vitreher.matador.dataStructures;
  */
 public class Deed {
 
-    private int purchasePrice;
+    private int deedPrice;
     private int pawnPrice;
+    private int owner;
 
-    public Deed(int purchasePrice, int pawnPrice)
+    public Deed(int deedPrice, int pawnPrice)
     {
-        this.purchasePrice = purchasePrice;
+        this.deedPrice = deedPrice;
         this.pawnPrice = pawnPrice;
     }
 
-    public int getPurchasePrice()
+    public int getDeedPrice()
     {
-        return this.purchasePrice;
+        return this.deedPrice;
     }
 
     public int getPawnPrice()
     {
         return this.pawnPrice;
     }
+    
+   public void setOwner(int player)
+   {
+       this.owner = player;
+   }
+   
+   public int getOwner()
+   {
+       return this.owner;
+   }
 }
