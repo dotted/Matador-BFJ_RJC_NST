@@ -42,6 +42,10 @@
        "zone": "orange"
     },
     {
+       "name": "Jail",
+       "zone": "in jail"
+    },
+    {
        "name": "Frederksberg Allé",
        "deedPrice": 2800,
        "rent": [200, 1000, 3000, 9000, 12500, 15000],
@@ -148,7 +152,11 @@
         "rent": [500, 2400, 7200, 17000, 20500, 24000],
         "housePrice": 3000,
         "zone": "white"
-    },     
+    },
+    {
+       "name": "Go To Jail",
+       "zone": "toJail"
+    },
     {
         "name": "Amagertorv",
         "deedPrice": 6000,

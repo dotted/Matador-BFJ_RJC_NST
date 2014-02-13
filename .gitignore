@@ -16,7 +16,8 @@ hs_err_pid*
 workspace.xml
 tasks.xml
 
-# NetBeans specific
+# NetBeans specific'
+Matador/nbproject/private/
 nbproject/private/
 build/
 nbbuild/
