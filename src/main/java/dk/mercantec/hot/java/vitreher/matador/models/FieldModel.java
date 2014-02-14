@@ -19,7 +19,7 @@ import org.json.JSONObject;
  */
 public class FieldModel extends Observable {
 
-    private final ArrayList<Field> fields;
+    private final Field[] fields;
     private Field[] playerLocations;
     /**
      * This will create an FieldModel which contains
@@ -29,56 +29,13 @@ public class FieldModel extends Observable {
      * @param amountPlayers
      * @param startField
      */
-    public FieldModel(JSONObject fields, int amountPlayers, String startField) {
-        this.fields = new ArrayList<Field>();
-        initialize(fields);
-        this.playerLocations = new Field[amountPlayers+1]; // Bank is player 0
+    public FieldModel(Field[] fields, int amountPlayers, String startField) {
+        this.fields = fields;
+        this.playerLocations = new Field[amountPlayers];
         int indexOfField = getFieldIndex(startField);
         for (int i = 0; i < this.playerLocations.length; i++)
         {
-            playerLocations[i] = this.fields.get(indexOfField);
-        }
-    }
-
-    /**
-     * Import json and parse it to fields
-     * @param fields raw jason input
-     */
-    private void initialize(JSONObject fields)
-    {
-        JSONArray array = fields.getJSONArray("fields");
-
-        for(int i = 0; i < array.length(); i++) {
-            JSONObject field = array.getJSONObject(i);
-
-            String name = field.getString("name");
-            String zone = field.getString("zone");
-            int deedPrice = field.optInt("deedPrice", 0);
-            int housePrice = field.optInt("housePrice");
-            int reward = field.optInt("reward");
-
-            JSONArray rent = field.optJSONArray("rent");
-
-            int[] rentArray = null;
-
-            if (rent != null)
-            {
-                rentArray = new int[rent.length()];
-
-                for(int r = 0; i < rent.length(); i++) {
-                    rentArray[r] = rent.getInt(r);
-                }
-            }
-
-            if ("start".equals(zone))
-                this.fields.add(new Start(name, zone, reward));
-            else if ("brewery".equals(zone))
-                this.fields.add(new Brewery(name, zone, new Deed(deedPrice, deedPrice/2)));
-            else if ("shipping".equals(zone))
-                this.fields.add(new Shipping(name, zone, new Deed(deedPrice, deedPrice/2), rentArray));
-            //else if (zone == "jail")
-            else
-                this.fields.add(new Street(name, zone, new UpgradeableDeed(deedPrice, deedPrice/2, housePrice), rentArray));
+            playerLocations[i] = this.fields[indexOfField];
         }
     }
 
@@ -90,13 +47,11 @@ public class FieldModel extends Observable {
      */
     private int getFieldIndex(String fieldName)
     {
-        int indexOfField = -1;
-        for (Field field: this.fields)
-        {
-            if (field.getName().equals(fieldName))
-                indexOfField = this.fields.indexOf(field);
+        for (int i = 0; i < this.fields.length; i++){
+            if (this.fields[i].getName().equals(fieldName))
+                return i;
         }
-        return indexOfField;
+        return -1;
     }
 
     /**
@@ -108,10 +63,12 @@ public class FieldModel extends Observable {
     public void setOwner(String fieldName, int player)
     {
         int indexOfField = getFieldIndex(fieldName);
-        Field field = this.fields.get(indexOfField);
+        Field field = this.fields[indexOfField];
         IDeed fieldDeed = (IDeed)field;
         Deed deed = fieldDeed.getDeed();
         deed.setOwner(player);
+        setChanged();
+        notifyObservers(deed);
     }
 
     /**
@@ -123,8 +80,10 @@ public class FieldModel extends Observable {
     public void addHouse(String fieldName, int amount)
     {
         int indexOfField = getFieldIndex(fieldName);
-        Street street = (Street)this.fields.get(indexOfField);
+        Street street = (Street)this.fields[indexOfField];
         street.addHouse(amount);
+        setChanged();
+        notifyObservers(street);
     }
 
     /**
@@ -135,8 +94,10 @@ public class FieldModel extends Observable {
     public void addHouse(String fieldName)
     {
         int indexOfField = getFieldIndex(fieldName);
-        Street street = (Street)this.fields.get(indexOfField);
+        Street street = (Street)this.fields[indexOfField];
         street.addHouse();
+        setChanged();
+        notifyObservers(street);
     }
 
     /**
@@ -145,13 +106,24 @@ public class FieldModel extends Observable {
      * @param player int
      * @param moves IDice
      */
-    public void movePlayerPiece(int player, IDice moves)
+    public void movePlayerPiece(int player, int moves)
     {
-        int currentIndex = this.fields.indexOf(playerLocations[player]);
-        int newIndex = currentIndex + moves.getEyes();
-        if (newIndex <= this.fields.size())
-            playerLocations[player] = this.fields.get(newIndex);
+        int currentIndex = getFieldIndex(playerLocations[player].getName());
+        int newIndex = currentIndex + moves;
+        if (newIndex <= this.fields.length)
+            playerLocations[player] = this.fields[newIndex];
         else
-            playerLocations[player] = this.fields.get(newIndex % this.fields.size());
+            playerLocations[player] = this.fields[newIndex % this.fields.length];
+        setChanged();
+        notifyObservers(playerLocations[player]);
+    }
+
+    /**
+     *
+     * @param player
+     * @return
+     */
+    public String getPlayerLocation(int player) {
+        return this.playerLocations[player].getName();
     }
 }

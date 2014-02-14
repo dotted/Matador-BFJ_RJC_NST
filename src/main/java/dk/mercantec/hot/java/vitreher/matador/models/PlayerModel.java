@@ -19,20 +19,29 @@ import java.util.Observable;
  */
 public class PlayerModel extends Observable {
 
-    private final ArrayList<Player> players;
-    private final ArrayList<BankAccount> bankAccounts;
+    private final Player[] players;
+    private final BankAccount[] bankAccounts;
 
-    public PlayerModel() {
+    public PlayerModel(Player[] players, BankAccount[] bankAccounts)
+    {
+        this.players = players;
+        this.bankAccounts = bankAccounts;
+    }
+
+    /**
+     *
+     */
+    /*public PlayerModel() {
         this.players = new ArrayList<Player>();
         this.bankAccounts = new ArrayList<BankAccount>();
-    }
+    }*/
 
     /**
      * This will create a Player and a BankAccount
      * @param playerName String
      * @param bankBalance int
      */
-    public void create(String playerName, int bankBalance)
+    /*public void create(String playerName, int bankBalance)
     {
         Player player = new Player(playerName);
         BankAccount bankAccount = new BankAccount(bankBalance);
@@ -41,7 +50,7 @@ public class PlayerModel extends Observable {
 
         setChanged();
         notifyObservers(this.bankAccounts);
-    }
+    }*/
     
     /**
      * This will make a transaction between 2 players.
@@ -51,8 +60,8 @@ public class PlayerModel extends Observable {
      */
     public void transaction(int fromPlayer, int toPlayer, int amount)
     {
-        BankAccount from = this.bankAccounts.get(fromPlayer);
-        BankAccount to = this.bankAccounts.get(toPlayer);
+        BankAccount from = this.bankAccounts[fromPlayer];
+        BankAccount to = this.bankAccounts[toPlayer];
         try {
             from.withdraw(amount);
             to.deposit(amount);
@@ -62,5 +71,13 @@ public class PlayerModel extends Observable {
         }
         notifyObservers(this.bankAccounts);
     }
-}
 
+    /**
+     *
+     * @param gameTurn
+     * @return
+     */
+    public int getCurrentPlayer(int gameTurn) {
+        return (gameTurn % this.players.length) + 1;
+    }
+}
