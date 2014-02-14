@@ -5,7 +5,7 @@ import dk.mercantec.hot.java.vitreher.matador.dataStructures.IDice;
 import dk.mercantec.hot.java.vitreher.matador.models.FieldModel;
 import dk.mercantec.hot.java.vitreher.matador.models.PlayerModel;
 import dk.mercantec.hot.java.vitreher.matador.models.TransactionModel;
-import dk.mercantec.hot.java.vitreher.matador.views.ConsoleGameView;
+//import dk.mercantec.hot.java.vitreher.matador.views.ConsoleGameView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,15 +19,15 @@ public class ConsoleGameController implements ActionListener {
     private final FieldModel fieldModel;
     private final PlayerModel playerModel;
     private final TransactionModel transactionModel;
-    private final ConsoleGameView consoleGameView;
+    //private final ConsoleGameView consoleGameView;
 
     private int gameTurn = 0;
 
-    public ConsoleGameController(FieldModel fieldModel, PlayerModel playerModel, TransactionModel transactionModel, ConsoleGameView consoleGameView) {
+    public ConsoleGameController(FieldModel fieldModel, PlayerModel playerModel, TransactionModel transactionModel) { //ConsoleGameView consoleGameView) {
         this.fieldModel = fieldModel;
         this.playerModel = playerModel;
         this.transactionModel = transactionModel;
-        this.consoleGameView = consoleGameView;
+        //this.consoleGameView = consoleGameView;
     }
 
     @Override

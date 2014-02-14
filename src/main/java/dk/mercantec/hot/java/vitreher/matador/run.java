@@ -5,7 +5,7 @@ import dk.mercantec.hot.java.vitreher.matador.dataStructures.*;
 import dk.mercantec.hot.java.vitreher.matador.models.FieldModel;
 import dk.mercantec.hot.java.vitreher.matador.models.PlayerModel;
 import dk.mercantec.hot.java.vitreher.matador.models.TransactionModel;
-import dk.mercantec.hot.java.vitreher.matador.views.ConsoleGameView;
+//import dk.mercantec.hot.java.vitreher.matador.views.ConsoleGameView;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -87,13 +87,13 @@ public class run {
         PlayerModel playerModel = new PlayerModel(players, bankAccounts);
         TransactionModel transactionModel = new TransactionModel((IDeed[])fields, bankAccounts);
 
-        ConsoleGameView consoleGameView = new ConsoleGameView();
+/*        ConsoleGameView consoleGameView = new ConsoleGameView();
 
         fieldModel.addObserver(consoleGameView);
         playerModel.addObserver(consoleGameView);
         transactionModel.addObserver(consoleGameView);
 
-        ConsoleGameController consoleGameController = new ConsoleGameController(fieldModel, playerModel, transactionModel, consoleGameView);
+        ConsoleGameController consoleGameController = new ConsoleGameController(fieldModel, playerModel, transactionModel, consoleGameView);*/
     }
 
     private static String convertStreamToString(InputStream is) {

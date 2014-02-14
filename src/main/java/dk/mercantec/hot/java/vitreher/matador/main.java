@@ -17,13 +17,7 @@ public class main {
 
     public static void main(String[] args) {
 
-        InputStream is = main.class.getResourceAsStream("/fields.json");
-        String jsonString = convertStreamToString(is);
-        JSONObject json = new JSONObject(jsonString);
-        FieldModel fModel = new FieldModel(json,4,"Start");
-        fModel.addHouse("Strandvej",4);
-        fModel.setOwner("Strandvej", 3);
-
+        new run(4);
     }
 }
 
